@@ -3,7 +3,9 @@
 @section('title', config('app.name', 'CCMS'))
 
 @push('head')
+    <link rel="preload" as="image" href="{{ asset('images/page/home-hero-clean.webp') }}?v=1" fetchpriority="high">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home-loading.css') }}?v=1">
     <link rel="stylesheet" href="{{ asset('css/home-motion.css') }}?v=12">
     <link rel="stylesheet" href="{{ asset('css/home-focus.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-planter.css') }}?v=15">
@@ -85,12 +87,13 @@
         $homeSections = ['portfolio' => 'Our Work'];
     @endphp
 
-    <section class="home-hero" id="home">
+    <section class="home-hero is-loading" id="home">
         <div class="home-hero-stage">
             <div class="home-hero-media" aria-hidden="true">
-                <img src="{{ asset('images/page/home-hero-clean.png') }}?v=2" alt="">
-                <img class="home-hero-planter" src="{{ asset('images/page/hero-planter.png') }}?v=2" alt="">
+                <img src="{{ asset('images/page/home-hero-clean.webp') }}?v=1" alt="" loading="eager" fetchpriority="high" decoding="async">
+                <img class="home-hero-planter" src="{{ asset('images/page/hero-planter.webp') }}?v=1" alt="" loading="eager" decoding="async">
             </div>
+            <div class="home-hero-loader" aria-hidden="true"><span></span></div>
             <div class="site-shell home-hero-inner">
                 <div class="home-hero-copy">
                     <span class="home-eyebrow">{{ $hero?->subtitle ?: 'Cleaner spaces · stronger communities' }}</span>
@@ -500,6 +503,18 @@
             });
         }, { threshold: 0.45 });
         impactStats.forEach((stat) => impactObserver.observe(stat));
+
+        const homeHero = document.querySelector('.home-hero');
+        const homeHeroImage = document.querySelector('.home-hero-media > img:first-child');
+        const finishHomeHeroLoading = () => homeHero?.classList.remove('is-loading');
+
+        if (homeHeroImage?.complete) {
+            finishHomeHeroLoading();
+        } else {
+            homeHeroImage?.addEventListener('load', finishHomeHeroLoading, { once: true });
+            homeHeroImage?.addEventListener('error', finishHomeHeroLoading, { once: true });
+            window.setTimeout(finishHomeHeroLoading, 3500);
+        }
 
         const testimonialTrack = document.querySelector('.home-testimonials-track');
         const testimonialCards = document.querySelectorAll('.home-testimonial-card');

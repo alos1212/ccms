@@ -1,0 +1,30 @@
+.home-hero-loader {
+    position: absolute;
+    z-index: 6;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(90deg, #f4fafd, rgba(244, 250, 253, .72));
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+}
+
+.home-hero-loader span {
+    width: 34px;
+    height: 34px;
+    border: 3px solid rgba(7, 141, 204, .18);
+    border-top-color: #078dcc;
+    border-radius: 50%;
+    animation: home-hero-loading-spin .8s linear infinite;
+}
+
+.home-hero.is-loading .home-hero-loader { opacity: 1; }
+
+@keyframes home-hero-loading-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero-loader span { animation: none; }
+}
