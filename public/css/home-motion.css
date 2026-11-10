@@ -1,0 +1,126 @@
+.home-hero {
+    min-height: 280vh;
+    overflow: visible;
+    --home-progress: 0;
+    --home-header-height: 73px;
+}
+
+/* After the one-time reveal, the scene is normal flow and certifications stay below it. */
+.home-hero.is-collapsed {
+    height: auto;
+    min-height: 0;
+}
+
+.home-hero.is-collapsed .home-hero-stage {
+    position: relative;
+    height: calc(100vh - var(--home-header-height));
+    min-height: calc(100vh - var(--home-header-height));
+}
+
+.home-hero.is-collapsed .home-hero-scroll-hint {
+    display: none;
+}
+
+.home-hero.is-collapsed .home-white-slide {
+    position: relative;
+    inset: auto;
+    height: auto;
+    min-height: 560px;
+    padding: 90px 0;
+    opacity: 1 !important;
+}
+
+.home-hero.is-collapsed .home-white-slide .home-certifications-content {
+    opacity: 1 !important;
+}
+
+.home-hero-stage {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - var(--home-header-height));
+    min-height: calc(100vh - var(--home-header-height));
+    overflow: hidden;
+}
+
+.home-hero-media {
+    z-index: 0;
+    overflow: hidden;
+}
+
+.home-hero-media img {
+    transform: scale(var(--home-zoom, 1)) rotate(var(--home-rotation, 0deg));
+    transform-origin: 52% 61%;
+    filter: blur(var(--home-blur, 0px));
+    will-change: transform, filter;
+}
+.home-hero-focus { position: absolute; z-index: 3; inset: 0; overflow: hidden; opacity: 0; pointer-events: none; clip-path: circle(29% at 52% 61%); will-change: opacity, clip-path; }
+.home-hero-focus img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: none !important; transform: scale(var(--home-zoom, 1)) rotate(var(--home-rotation, 0deg)); transform-origin: 52% 61%; }
+
+.home-hero-media::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: -5%;
+    pointer-events: none;
+    opacity: calc(var(--home-progress) * .8);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    mask-image: linear-gradient(90deg, #000 0%, transparent 22%, transparent 78%, #000 100%);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 22%, transparent 78%, #000 100%);
+}
+
+.home-hero-media::after { z-index: 2; }
+.home-hero-inner { z-index: 3; height: 100%; min-height: 0; }
+.home-hero-scroll-hint { position: absolute; z-index: 4; bottom: 25px; left: 50%; display: inline-flex; align-items: center; gap: 9px; transform: translateX(-50%); color: #236d9e; font-size: 11px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.home-hero-scroll-hint i { animation: home-scroll-arrow 1.5s ease-in-out infinite; }
+.home-white-slide { position: absolute; z-index: 8; right: 0; bottom: 0; left: 0; height: calc(100vh - var(--home-header-height)); display: flex; align-items: center; padding: 45px 0; background: #fff; box-shadow: 0 -24px 60px rgba(16, 54, 84, .08); opacity: 0; will-change: opacity; }
+.home-white-slide .home-certifications-content { opacity: 0; transform: none; will-change: opacity; }
+.home-capabilities { position: absolute; z-index: 5; right: 0; bottom: 0; left: 0; transform: translateY(0); opacity: 1; transition: none; will-change: transform, opacity; }
+.home-capability { transition: none; will-change: transform, opacity; }
+.home-hero-copy, .home-hero-note { will-change: transform, opacity; }
+.home-intro { position: relative; z-index: 10; background: #fff; }
+.home-hero-note {
+    position: absolute;
+    top: 50%;
+    right: calc((100vw - 100%) / -2);
+    width: 280px;
+    margin-right: 0;
+    padding: 24px 27px;
+    gap: 5px;
+    border-radius: 18px 0 0 18px;
+    background: linear-gradient(105deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .42));
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    font-size: 15px;
+    line-height: 1.4;
+}
+.home-hero-note strong { font-size: 16px; }
+.home-capabilities-grid { min-height: 110px; }
+.home-capability { padding: 18px 20px; font-size: 13px; }
+.home-capability i { font-size: 28px; }
+.home-capability-highlight { font-size: 11px; }
+@keyframes home-scroll-arrow { 0%,100% { transform: translateY(-3px); } 50% { transform: translateY(3px); } }
+
+@media (max-width: 800px) {
+    .home-hero { min-height: 250vh; --home-header-height: 69px; }
+    .home-hero.is-collapsed .home-hero-stage { height: calc(100vh - var(--home-header-height)); min-height: calc(100vh - var(--home-header-height)); }
+    .home-hero.is-collapsed .home-white-slide { min-height: 0; padding: 70px 0; }
+    .home-hero-stage {
+        height: calc(100vh - var(--home-header-height));
+        min-height: calc(100vh - var(--home-header-height));
+    }
+    .home-hero-inner { height: 100%; min-height: 0; }
+    .home-capabilities { bottom: 0; }
+    .home-capabilities-grid { min-height: 96px; }
+    .home-capability { min-height: 96px; padding: 16px 14px; font-size: 12px; }
+    .home-capability i { font-size: 25px; }
+    .home-capability-highlight { font-size: 10px; }
+    .home-hero-media img { transform-origin: 48% 59%; }
+    .home-hero-scroll-hint { bottom: 17px; }
+    .home-white-slide { height: calc(100vh - var(--home-header-height)); padding: 45px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero-media img { filter: none !important; transform: none !important; }
+    .home-hero-scroll-hint i { animation: none; }
+}

@@ -9,6 +9,7 @@
         <div class="admin-form-grid">
             <div><label for="title">Título</label><input id="title" name="title" type="text" value="{{ old('title', $content->title ?? '') }}" required placeholder="Título del contenido">@error('title')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
             <div><label for="subtitle">Subtítulo</label><input id="subtitle" name="subtitle" type="text" value="{{ old('subtitle', $content->subtitle ?? '') }}" placeholder="Una frase complementaria">@error('subtitle')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
+            <div><label for="icon">Icono opcional</label><input id="icon" name="icon" type="text" value="{{ old('icon', $content->icon ?? '') }}" placeholder="fa-leaf">@error('icon')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
             <div class="admin-form-full"><label for="introduction">Introducción</label><textarea id="introduction" name="introduction" rows="3" placeholder="Texto breve para presentar el contenido">{{ old('introduction', $content->introduction ?? '') }}</textarea>@error('introduction')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
             <div class="admin-form-full admin-description-field">
                 <label for="description-editor">Descripción</label>
@@ -39,7 +40,8 @@
     <div class="admin-form-section">
         <div class="admin-form-section-title"><i data-lucide="link"></i><div><strong>Enlace opcional</strong><small>Añade un destino si este contenido debe llevar a otra página.</small></div></div>
         <div class="admin-form-grid">
-            <div class="admin-form-full"><label for="url">URL</label><input id="url" name="url" type="url" value="{{ old('url', $content->url ?? '') }}" placeholder="https://ejemplo.com">@error('url')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
+            <div><label for="link_label">Texto del enlace</label><input id="link_label" name="link_label" type="text" value="{{ old('link_label', $content->link_label ?? '') }}" placeholder="Leer más">@error('link_label')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
+            <div class="admin-form-full"><label for="url">URL o ancla</label><input id="url" name="url" type="text" value="{{ old('url', $content->url ?? '') }}" placeholder="https://ejemplo.com o #contact">@error('url')<span class="admin-field-error">{{ $message }}</span>@enderror</div>
             <label class="admin-checkbox"><input name="open_in_new_tab" type="checkbox" value="1" @checked(old('open_in_new_tab', $content->open_in_new_tab ?? false))><span>Abrir enlace en una nueva pestaña</span></label>
         </div>
     </div>

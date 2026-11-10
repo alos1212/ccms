@@ -1,0 +1,107 @@
+.home-partnership {
+    position: relative;
+    min-height: 245px;
+    overflow: hidden;
+    background: #eef8fc;
+}
+
+.home-partnership-visual {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.home-partnership-visual::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(238, 248, 252, .04) 0 33%, rgba(238, 248, 252, .78) 61%, #eef8fc 77%, #eef8fc 100%);
+    content: '';
+}
+
+.home-partnership-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+.home-partnership-shell {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 245px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.home-partnership-shell::before,
+.home-partnership-shell::after {
+    position: absolute;
+    right: -80px;
+    border: 1px solid rgba(62, 176, 222, .2);
+    border-radius: 50%;
+    content: '';
+    pointer-events: none;
+}
+
+.home-partnership-shell::before {
+    width: 330px;
+    height: 330px;
+}
+
+.home-partnership-shell::after {
+    right: -35px;
+    width: 245px;
+    height: 245px;
+    border-color: rgba(62, 176, 222, .14);
+}
+
+.home-partnership-copy {
+    position: relative;
+    z-index: 1;
+    width: min(500px, 48%);
+    padding: 34px 28px 34px 54px;
+}
+
+.home-partnership-kicker {
+    display: block;
+    margin-bottom: 7px;
+    color: #4c7592;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.home-partnership-copy h2 {
+    max-width: 390px;
+    margin: 0;
+    color: #113e72;
+    font-size: clamp(25px, 2.4vw, 35px);
+    line-height: 1.05;
+    letter-spacing: -.035em;
+}
+
+.home-partnership-copy p {
+    max-width: 430px;
+    margin: 10px 0 16px;
+    color: #5e7890;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.home-partnership-link {
+    padding: 10px 17px;
+    border-radius: 999px;
+    font-size: 11px;
+}
+
+@media (max-width: 800px) {
+    .home-partnership { min-height: 330px; }
+    .home-partnership-shell { min-height: 330px; align-items: flex-end; justify-content: stretch; }
+    .home-partnership-copy { width: 100%; padding: 42px 18px 30px; background: linear-gradient(90deg, rgba(238, 248, 252, .98), rgba(238, 248, 252, .84)); }
+    .home-partnership-visual img { object-position: left top; }
+    .home-partnership-visual::after { background: linear-gradient(180deg, rgba(238, 248, 252, .1), rgba(238, 248, 252, .15) 35%, rgba(238, 248, 252, .96) 72%); }
+}

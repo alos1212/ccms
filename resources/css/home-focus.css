@@ -1,0 +1,15 @@
+.home-hero-media img,
+.home-hero-focus img {
+    transform-origin: 55% 63%;
+}
+
+.home-hero-focus {
+    clip-path: circle(29% at 55% 63%);
+}
+
+@media (max-width: 800px) {
+    .home-hero-media img,
+    .home-hero-focus img {
+        transform-origin: 55% 63%;
+    }
+}

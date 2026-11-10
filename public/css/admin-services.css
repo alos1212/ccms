@@ -1,0 +1,26 @@
+.admin-service-cell { min-width: 285px; }
+.admin-service-cell .admin-content-placeholder { font-size: 18px; }
+.admin-service-slug { display: block; margin-top: 5px; color: #2c6a9e; font-size: 11px; }
+.admin-service-url { display: inline-flex; align-items: center; gap: 6px; color: #2c6a9e; font-size: 12px; white-space: nowrap; }
+.admin-service-url svg { width: 13px; height: 13px; }
+.admin-field-help { display: block; margin: -13px 0 16px; color: var(--admin-muted); font-size: 11px; line-height: 1.45; }
+.admin-slug-input { display: flex; align-items: center; margin-bottom: 20px; border: 1px solid #dfe5e1; border-radius: 7px; background: #fcfdfc; overflow: hidden; }
+.admin-slug-input:focus-within { border-color: #5795ca; box-shadow: 0 0 0 3px #e1effc; }
+.admin-slug-input span { padding-left: 13px; color: #7f96ac; font-size: 13px; white-space: nowrap; }
+.admin-form .admin-slug-input input { flex: 1; width: auto; margin: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.admin-icon-input { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; border: 1px solid #dfe5e1; border-radius: 7px; padding-left: 13px; background: #fcfdfc; }
+.admin-icon-input:focus-within { border-color: #5795ca; box-shadow: 0 0 0 3px #e1effc; }
+.admin-icon-input i { width: 20px; color: #2c6a9e; text-align: center; }
+.admin-form .admin-icon-input input { flex: 1; width: auto; margin: 0; border: 0; background: transparent; box-shadow: none; }
+.admin-service-settings .admin-form-grid { align-items: center; }
+.admin-service-active { align-self: center; padding-top: 4px; }
+.admin-service-form .ql-toolbar.ql-snow { border-color: #dfe5e1; border-radius: 7px 7px 0 0; background: #fff; }
+.admin-service-form .ql-container.ql-snow { min-height: 270px; border-color: #dfe5e1; border-radius: 0 0 7px 7px; background: #fff; font-family: Lato, sans-serif; font-size: 15px; }
+.admin-service-form .ql-editor { min-height: 270px; color: var(--admin-ink); line-height: 1.7; }
+.admin-service-form .ql-editor.ql-blank::before { color: #9ba6ad; font-style: italic; }
+
+@media (max-width:720px) {
+    .admin-services-table { min-width: 800px; }
+    .admin-service-settings .admin-form-grid { grid-template-columns: 1fr; }
+    .admin-service-active { padding: 0; margin-bottom: 16px !important; }
+}

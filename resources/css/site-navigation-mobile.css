@@ -1,0 +1,16 @@
+@media (max-width: 800px) {
+    .site-submenu-item > .site-nav-trigger > span {
+        font-size: 0;
+        transform: none !important;
+    }
+
+    .site-submenu-item > .site-nav-trigger > span::after {
+        content: '⌄';
+        display: block;
+        font-size: 15px;
+    }
+
+    .site-submenu-item.is-open > .site-nav-trigger > span::after {
+        transform: rotate(180deg);
+    }
+}

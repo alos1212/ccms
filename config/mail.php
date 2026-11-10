@@ -2,6 +2,8 @@
 
 return [
 
+    'contact_recipient' => env('CONTACT_RECIPIENT', env('MAIL_FROM_ADDRESS', 'hello@example.com')),
+
     /*
     |--------------------------------------------------------------------------
     | Default Mailer

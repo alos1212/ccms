@@ -1,0 +1,73 @@
+.home-hero-media > img:first-child {
+    transform: scale(var(--home-background-zoom, 1)) !important;
+    transform-origin: 50% 62%;
+    filter: blur(var(--home-background-blur, 0px)) !important;
+    transition: filter .08s linear;
+}
+
+.home-hero-media::after {
+    background: linear-gradient(
+        90deg,
+        rgba(247, 252, 255, .98) 0%,
+        rgba(247, 252, 255, .94) 20%,
+        rgba(247, 252, 255, .72) 34%,
+        rgba(247, 252, 255, .36) 50%,
+        rgba(247, 252, 255, .12) 66%,
+        rgba(247, 252, 255, 0) 82%
+    ) !important;
+    opacity: var(--home-copy-overlay-opacity, 1);
+    transition: none;
+}
+
+.home-hero-media::before {
+    opacity: 0 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+.home-hero-focus { display: none !important; }
+
+.home-hero-media .home-hero-planter {
+    position: absolute !important;
+    inset: auto;
+    z-index: 3;
+    top: 63%;
+    left: 50%;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(26vw, 380px);
+    height: auto !important;
+    aspect-ratio: 3 / 2;
+    object-fit: contain !important;
+    object-position: center;
+    opacity: 1;
+    transform: translate(-50%, -47%) rotate(0deg);
+    transform-origin: 50% 58%;
+    filter: none !important;
+    clip-path: inset(0 0 0 0);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+@media (max-width: 800px) {
+    .home-hero-media::after {
+        background: linear-gradient(
+            90deg,
+            rgba(247, 252, 255, .98) 0%,
+            rgba(247, 252, 255, .82) 38%,
+            rgba(247, 252, 255, .24) 72%,
+            rgba(247, 252, 255, 0) 100%
+        ) !important;
+    }
+
+    .home-hero-media .home-hero-planter {
+        top: 60%;
+        left: 50%;
+        width: min(55vw, 330px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero-planter { transform: translate(-50%, -47%) rotate(0deg) !important; opacity: 1 !important; }
+    .home-hero-media > img:first-child { filter: none !important; }
+}

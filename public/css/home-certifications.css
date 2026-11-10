@@ -1,0 +1,235 @@
+.home-certifications-content {
+    display: grid;
+    grid-template-columns: minmax(0, .86fr) minmax(520px, 1.14fr);
+    align-items: center;
+    gap: 72px;
+}
+
+.home-certifications-copy { min-width: 0; }
+
+.home-certifications-kicker {
+    display: block;
+    color: #078dcc;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .17em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.home-certifications-line {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 99px;
+    background: #13a8df;
+}
+
+.home-certifications-copy h2 {
+    max-width: 580px;
+    margin: 15px 0 17px;
+    color: #0b3158;
+    font-size: clamp(38px, 4.2vw, 58px);
+    line-height: .99;
+    letter-spacing: -.055em;
+}
+
+.home-certifications-copy p {
+    max-width: 440px;
+    margin: 0;
+    color: #6d8495;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.home-certifications-showcase {
+    position: relative;
+    display: grid;
+    gap: 18px;
+    padding: 23px;
+    border: 1px solid #d3e8f3;
+    border-radius: 12px 30px 30px 30px;
+    background: linear-gradient(145deg, #f1f9fd 0%, #e5f3fa 100%);
+    box-shadow: 0 18px 42px rgba(25, 87, 123, .1);
+}
+
+.home-certifications-showcase::before,
+.home-certifications-showcase::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    border: 1px solid rgba(19, 168, 223, .2);
+}
+
+.home-certifications-showcase::before {
+    top: -62px;
+    right: 18px;
+    width: 154px;
+    height: 154px;
+}
+
+.home-certifications-showcase::after {
+    right: -42px;
+    bottom: -68px;
+    width: 190px;
+    height: 190px;
+    border-color: rgba(19, 168, 223, .12);
+}
+
+.home-certifications-featured {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.home-certification-card {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 7px;
+    min-width: 0;
+    min-height: 155px;
+    padding: 14px 10px;
+    border: 1px solid #d8eaf3;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 7px 16px rgba(28, 90, 124, .06);
+    text-align: center;
+}
+
+.home-certification-card strong {
+    color: #164b78;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.home-certification-card small {
+    color: #718b9d;
+    font-size: 9px;
+    line-height: 1.25;
+}
+
+.home-certification-logo {
+    display: block;
+    width: 100%;
+    max-width: 116px;
+    height: 72px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.home-certification-mark {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    border: 3px solid #1c7eb2;
+    border-radius: 50%;
+    color: #165183;
+    background: #f0faff;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: -.05em;
+    box-shadow: 0 8px 18px rgba(22, 102, 146, .1);
+}
+
+.home-certification-mark--cims {
+    width: auto;
+    height: auto;
+    padding: 10px 3px;
+    border: 0;
+    border-radius: 0;
+    color: #0f6da0;
+    background: transparent;
+    font-size: 25px;
+    letter-spacing: -.1em;
+    box-shadow: none;
+}
+
+.home-certification-mark--epa {
+    border: 0;
+    border-radius: 18px;
+    color: #14577e;
+    background: linear-gradient(145deg, #e4f6fb, #a9dfef);
+    transform: rotate(-7deg);
+}
+
+.home-certification-mark--iicrc {
+    border-color: #35a7b0;
+    color: #087a8d;
+    background: radial-gradient(circle at 35% 30%, #dff9eb 0 18%, #70d5c8 19% 42%, #2b94ae 43% 70%, #12658b 71%);
+    font-size: 11px;
+    text-shadow: 0 1px rgba(255,255,255,.55);
+}
+
+.home-certifications-designations {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+}
+
+.home-certifications-showcase-label {
+    width: 100%;
+    color: #668397;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .15em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.home-certification-badge {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid #c1dfed;
+    border-radius: 5px;
+    color: #164b78;
+    background: rgba(255, 255, 255, .7);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .01em;
+}
+
+.home-certification-badge small {
+    margin-left: 3px;
+    color: #078dcc;
+    font-size: 9px;
+}
+
+@media (max-width: 1100px) {
+    .home-certifications-content { grid-template-columns: minmax(0, .9fr) minmax(430px, 1.1fr); gap: 38px; }
+    .home-certifications-showcase { padding: 18px; }
+    .home-certification-card { min-height: 135px; }
+    .home-certification-mark { width: 58px; height: 58px; font-size: 12px; }
+    .home-certification-mark--cims { font-size: 21px; }
+}
+
+@media (max-width: 800px) {
+    .home-certifications-content { grid-template-columns: 1fr; gap: 25px; }
+    .home-certifications-copy h2 { font-size: 42px; }
+    .home-certifications-copy p { font-size: 15px; }
+    .home-certifications-featured { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .home-certification-card:nth-child(n+3) { border-top: 1px solid #d8eaf3; }
+}
+
+@media (max-width: 500px) {
+    .home-certifications-copy h2 { font-size: 36px; }
+    .home-certifications-showcase { padding: 14px; border-radius: 10px 22px 22px 22px; }
+    .home-certification-card { min-height: 128px; padding-inline: 5px; }
+    .home-certification-logo { max-width: 112px; height: 62px; }
+    .home-certification-mark { width: 52px; height: 52px; }
+    .home-certification-mark--cims { font-size: 18px; }
+    .home-certification-card strong { font-size: 10px; }
+    .home-certification-badge { padding-inline: 9px; font-size: 10px; }
+}

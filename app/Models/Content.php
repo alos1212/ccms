@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 
-#[Fillable(['title', 'subtitle', 'image', 'introduction', 'description', 'section', 'url', 'open_in_new_tab', 'sort_order', 'is_active'])]
+#[Fillable(['title', 'subtitle', 'image', 'icon', 'introduction', 'description', 'section', 'url', 'link_label', 'open_in_new_tab', 'sort_order', 'is_active'])]
 class Content extends Model
 {
     protected function casts(): array
